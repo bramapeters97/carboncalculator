@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Carbon Calculator HTML header -->
+        <title>Carbon Footprint Calculator</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+        <!-- SurveyJS library imports -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.css" rel="stylesheet"/>
+        <link href="https://surveyjs.azureedge.net/1.8.14/modern.css" type="text/css" rel="stylesheet"/>
+        <link href="https://unpkg.com/nouislider@9.2.0/distribute/nouislider.min.css" rel="stylesheet"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/wnumb@1.1.0"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js"></script>
+        <script src="https://unpkg.com/nouislider@9.2.0/distribute/nouislider.js"></script>
+        <script src="https://surveyjs.azureedge.net/1.8.14/survey.jquery.min.js"></script>
+        <script src="https://surveyjs.azureedge.net/1.8.14/surveyjs-widgets.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <!-- Page title header -->
+    <header class="bg-primary text-white" id="header">
+        <div class="container text-center" id="header_textbox">
+            <h1 id="text-font">0HM170 - Carbon Footprint Calculator</h1>
+            <p class="lead">Developed as part of the HTI-master program at the University Technology Eindhoven</p>
+        </div>
+    </header>
+    <!-- Page body -->
+    <body>
+        <!-- Survey navigation tool -->
+        <div id="surveyNavigation">
+            <div id="surveyNavigationTop"></div>
+        </div>
+        <!-- Survey question set -->
+        <div id="surveyElement"></div>
+        <!-- Survey result script -->
+        <div id="surveyResult"></div>
+        <script type="text/javascript" src="index.js"></script>
+        <!-- Visualization loading icon -->
+        <div id="load_icon">
+            <img src="load_icon.gif" alt="Loading..."/>
+        </div>
+        <!-- Visualization body -->
+        <div id="visualization" class="polaroid">
+            <!-- Verification code -->
+            <div class="button_container">
+                <div class="text-block">
+                    <h4 id="verification_code">VERIFICATION CODE: NV_10421</h4>
+                    <button id="verification_button" onclick="copyToClipboard()">COPY TO CLIPBOARD</button>
+                </div>
+                <div class="button_container_text">
+                    <p>After pasting your verification code in the survey, please keep this window with your result open for reference while answering the questions. </p>
+                </div>
+            </div>
+            <!-- Visualization header -->
+            <div class="polaroid_title">
+                <p id="result_text"/><b>Your personal carbon footprint:</b>
+            </div>
+            <!-- Visualization window -->
+            <div id="visualization_holder">
+                <!-- Numerical visualization window -->
+                <div id="numerical_visualization" class="polaroid_visualization">
+                    <p class="numerical_text">Your total carbon footprint is:</p>
+                    <p id="numerical_text" class="numerical_text" class="numerical_score"><b>...... kg CO<sub>2</sub></b></p>
+                </div>
+                <!-- Globes/social comparison visualization image placeholder -->
+                <div id="image_visualization">
+                    <img id="result_image" src="V1_1.png" alt="Globes that you need...">
+                </div>
+            </div>
+            <!-- Piechart visualization window -->
+            <div id="piechart_holder">
+                <p id="piechart_info">(all numbers displayed are in kg CO<sub>2)</sub></p>
+                <div id="piechart"></div>
+            </div>
+        </div>
+        <!-- Loading page screen dim overlays -->
+        <div id="overlay_3"></div>
+        <div id="overlay_1"></div>
+    </body>
+    <!-- Page footer -->
+    <footer id="footer" class="py-5 bg-dark">
+        <div id="overlay_2"></div>
+        <div>
+            <p id="footer_text" class="m-0 text-center text-white">Copyright &copy; Dennis Arreman, Yanyu Zheng, Pam Philippens & Bram Peters</p>
+        </div>
+    </footer>
+</html>
